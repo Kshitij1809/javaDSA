@@ -1,0 +1,54 @@
+package com.cdac.acts;
+
+public class QueueMain implements Queue{
+	
+	private int[] queueData;
+	private int front;
+	private int rear;
+	
+	public QueueMain(int n) {
+		queueData = new int[n];
+		front = -1;
+		rear = -1;
+	}
+	
+
+
+
+	@Override
+	public void enqueue(int element) {
+		if(isFull()) {
+			return;
+		}
+		
+		rear++;
+		queueData[rear] = element;
+		
+	}
+
+	@Override
+	public int dequeue() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public boolean isEmpty() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean isFull() {
+		if(rear == (queueData.length - 1)) {
+			return true;
+		}
+		return false;
+	}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
