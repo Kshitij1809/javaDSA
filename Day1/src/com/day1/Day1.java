@@ -1,42 +1,39 @@
 package com.day1;
 
+import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.LinkedHashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.HashSet;
 
 public class Day1 {
 
-	public static int removeDuplicates(int[] nums) {
-		
-		List<int[]> list = Arrays.asList(nums);
-		
-		Set<int[]> set = new LinkedHashSet<>();
-		set.add(list.get(0));
-		set.add(list.get(1));
-		set.add(list.get(2));
-		
-		int[] arr = new int[set.size()];
-		
-		int j = 0;
-		for(int i : set) {
-			arr[j] = i;
+	public static int[] removeDuplicates(int[] nums) {
+
+		HashSet<Integer> set = new HashSet<>();
+		//System.out.println(set); // this gives --> []
+
+		for(int num : nums) {
+			if (!set.contains(num)) 
+				set.add(num);
 		}
-		
-		for (int i = 0; i < arr.length; i++) {
-			System.out.println(arr[i]);
+
+		ArrayList<Integer> arrList = new ArrayList<>();
+		arrList.addAll(set);
+		int[] arr = new int[arrList.size()];
+
+		for(int i = 0; i < arrList.size(); i++) {
+			arr[i] = arrList.get(i);
 		}
-  		
-		return set.size();
-		
+
+		return arr;
+
 	}
+
 	public static void main(String[] args) {
-		
 
 		int[] nums = {1,1,2};
-		int n = removeDuplicates(nums);
-		
-		System.out.println(n);
+		nums = removeDuplicates(nums);
+
+		System.out.println(Arrays.toString(nums));
 
 	}
 

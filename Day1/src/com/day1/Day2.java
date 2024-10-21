@@ -1,84 +1,57 @@
 package com.day1;
 
+import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashSet;
 import java.util.LinkedHashSet;
-import java.util.List;
-import java.util.Set;
 
 public class Day2 {
-	
-	public static int deleteAnElement(int[] arr, int n, int pos) {
-		
+
+	public static int deleteAnElement(Integer[] arr, int n, int pos) {
+
 		for (int i = pos; i < arr.length ; i++) {
 			arr[i - 1] = arr[i];
 		}
-		
 		arr[n-1] = 0;
-		
-		
 		return n - 1;
 	}
-	
-    public int removeDuplicates(int[] nums) {
 
-        List<int[]> list = Arrays.asList(nums);
-		
-		Set<int[]> set = new LinkedHashSet<>();
-		
-		set.addAll(list);
+	public static int[] removeDuplicates(Integer[] nums) {
 
-        int n = set.size();
-        return n;
-        
-    }
+		LinkedHashSet<Integer> set = new LinkedHashSet<>();
+		//System.out.println(set); // this gives --> []
+
+		for(int num : nums) {
+			if (!set.contains(num)) 
+				set.add(num);
+		}
+
+		ArrayList<Integer> arrList = new ArrayList<>();
+		arrList.addAll(set);
+		int[] arr = new int[arrList.size()];
+
+		for(int i = 0; i < arrList.size(); i++) {
+			arr[i] = arrList.get(i);
+		}
+
+		return arr;
+
+	}
 
 	public static void main(String[] args) {
-		
+
 		Integer arr[] = {5, 6, 5, 6, 8, 9, 3, 3};
-//		int n = deleteAnElement(arr, 5, 3);
-//		
-//		for (int i = 0; i < n; i++) {
-//			System.out.print(arr[i] + " ");
-//		}
 		
-		List<Integer> list = Arrays.asList(arr);
+		System.out.println(Arrays.toString(arr));
 		
-		Set<Integer> set = new LinkedHashSet<>();
+		int n = deleteAnElement(arr, arr.length, 5);
 		
-		set.addAll(list);
-		
-		set.forEach(System.out::print);
-		System.out.println("\n"+set.size());
-		Integer[] newArr = null;
-		if(set instanceof Object) {
-		newArr = (Integer[]) set.toArray();
+		for(int i = 0; i < n; i++) {
+			System.out.print(arr[i] + " ");
 		}
-		for (int i = 0; i < newArr.length; i++) {
-			System.out.println(newArr[i]);
-		}
+		System.out.println();
+		System.out.println(Arrays.toString(removeDuplicates(arr)));
 		
-//		Integer newArr[] = new Integer[arr.length];
-//		
-//		System.out.println("\n"+set.size());
-//
-//		int i = 0;
-//		for(Integer s : set) {
-//			newArr[i] = s;
-//			i++;
-//		}
-//		
-//		System.out.println(" ");
-//		for (int j = 0; j < set.size(); j++) {
-//			
-//			System.out.print(newArr[j] + " ");
-//		}
-		
-		
-		
-		
-		
-		
+
 
 	}
 
