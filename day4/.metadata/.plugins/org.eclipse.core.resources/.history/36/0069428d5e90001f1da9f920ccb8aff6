@@ -1,0 +1,43 @@
+package com.cdac.acts.ass;
+
+class Node {
+	
+	int data;
+	Node next;
+	Node tail;
+	
+	public Node() {
+		this.data = 0;
+		this.next = null;
+	}
+	
+	public Node(int data) {
+		this.data = data;
+		this.next = null;
+	}
+	
+}
+
+public class DLL implements DList{
+	
+	Node node = new Node();
+
+	@Override
+	public void addAtRear(int element) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public int deleteFirstNode() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public boolean isEmpty() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

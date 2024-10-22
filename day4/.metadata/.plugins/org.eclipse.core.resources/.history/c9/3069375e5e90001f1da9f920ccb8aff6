@@ -1,0 +1,23 @@
+package com.cdac.acts.ass;
+
+public class DLL implements DList{
+
+	@Override
+	public void addAtRear(int element) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public int deleteFirstNode() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public boolean isEmpty() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}
