@@ -9,29 +9,36 @@ class MergeSortProgram {
 		int i1 = startPos1;
 		int i2 = startPos2;
 		int r = 0;
+		System.out.println(startPos1 + " " + startPos2 + " " + r);
 
+		System.out.println("arr : "+Arrays.toString(arr));
 		while ((i1 <= endPos1) && (i2 <= endPos2)) {
 			if (arr[i1] < arr[i2]) {
 				mergedArray[r] = arr[i1];
+				System.out.println("1]"+Arrays.toString(mergedArray));
 				++i1;
 			}
 			else {
 				mergedArray[r] = arr[i2];
+				System.out.println("2]"+Arrays.toString(mergedArray));
 				++i2;
 			}
 			++r;
 		}
+		System.out.println(Arrays.toString(mergedArray));
 
 		while (i1 <= endPos1) {
 			mergedArray[r] = arr[i1];
 			++i1;
 			++r;
 		}
+		System.out.println(Arrays.toString(mergedArray));
 		while (i2 <= endPos2) {
 			mergedArray[r] = arr[i2];
 			++i2;
 			++r;
 		}
+		System.out.println(Arrays.toString(mergedArray));
 
 		int i = startPos1;
 		int j = 0;
@@ -72,7 +79,7 @@ class MergeSortProgram {
 
 public class mainMerge {
     public static void main(String[] args) {
-        int[] mergeSortNums = {38, 27, 43, 10};
+        int[] mergeSortNums = { 12, 11, 13, 5, 6, 7 };
 		System.out.println("\nBefore sorting - " + Arrays.toString(mergeSortNums));
 		MergeSortProgram.MergeSort(mergeSortNums);
 		System.out.println("After merge sort - " + Arrays.toString(mergeSortNums));
